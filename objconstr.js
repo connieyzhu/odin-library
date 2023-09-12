@@ -12,7 +12,29 @@ function Book(title, author, pages, hasRead){
 }
 
 function createCard(book){
-  
+  const card = document.createElement('div');
+
+  const bookTitle = document.createElement('h2');
+  bookTitle.textContent = book.title;
+
+  const bookAuthor = document.createElement('h3');
+  bookAuthor.textContent = book.author;
+
+  const pageNum = document.createElement('p');
+  pageNum.textContent = book.pages;
+
+  const readStatus = document.createElement('button');
+  if(book.hasRead){
+    readStatus.className = 'read';
+    readStatus.textContent = 'Read';
+  }else{
+    readStatus.className = 'not_read';
+    readStatus.textContent = 'Not Read';
+  }
+
+  card.append(bookTitle, bookAuthor, pageNum, readStatus);
+  return card;
+
 }
 
 function displayLibrary(){
@@ -26,10 +48,10 @@ function displayLibrary(){
 }
 
 function addBookToLibrary(){
-
+  
 }
 
-const book1 = new Book('hi', 'hi', 100, true);
-myLibrary.push(book1);
+/*const book1 = new Book('hi', 'hi', 100, true);
+myLibrary.push(book1);*/
 
 displayLibrary();
