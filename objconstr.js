@@ -33,7 +33,7 @@ function createCard(book){
   card.className = 'card';
 
   spanID++;
-  const close = document.createElement('span');
+  const close = document.createElement('span'); 
   close.className = 'close';
   close.setAttribute('id', `${spanID}`)
   close.setAttribute('onclick', 'deleteBook(this); return false;')
